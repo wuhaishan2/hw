@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            margin-left:auto;
+            margin-right:auto;
+            max-width: 500px;
+            background: #F7F7F7;
+            padding: 25px 15px 25px 10px;
+            font: 12px Georgia, "Times New Roman", Times, serif;
+            color: #888;
+            text-shadow: 2px 2px 2px #FFF;
+            border:1px solid #E4E4E4;
+        }
+    </style>
+    </head>
+<body>
+
+<div class="box">
+    number: <input type="txt" name="Number1" id="n1" onchange="cell()"/> <input type="button" value="Submit"  onclick="cell()"/>
+</div>
+<script>
+    function cell() {
+        var nmb=document.getElementById("n1");//访问数字输入元素
+        var n = nmb.value;//获取数字输入元素的数值
+        document.write('<table style="border-collapse:collapse;">');//写表格
+        for(var i = 0;i < n;i++){
+            document.write('<tr>');//写表格 的行
+            for(var j = 0;j < n;j++){//写表格 每行中的列
+                //列中的具体元素
+                document.write('<td style=" border:solid 1px black ; text-align: center;width: 50px" height="50px">'+(j+i*n+1)+'</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    }
+</script>
+</body>
+</html>
